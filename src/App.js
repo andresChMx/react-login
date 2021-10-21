@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter,Link,NavLink,Route } from 'react-router-dom';
-import Login from './components/Login';
+import Login from './components//login/Login';
 import Dashboard from './components/Dashboard';
 import Home from './components/Home';
 import { useEffect, useState } from 'react';
@@ -39,14 +39,14 @@ function App(props) {
   return (
       <div className="App">
         <BrowserRouter>
-          <div className="header">
+          {/* <div className="header">
             <NavLink activeClassName="active" to="/">Home</NavLink>
             <NavLink activeClassName="active" to="/login">Login <small>Access without token only</small></NavLink>
             <NavLink activeClassName="active" to="/dashboard">Dashboard <small>Acess with token only</small></NavLink>
           </div>
           <div className="content">
             
-          </div>
+          </div> */}
 
           <Route exact path="/" component={Home}></Route>
           <PublicRoute path="/login" component={Login}></PublicRoute>

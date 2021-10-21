@@ -2,11 +2,9 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router';
 
 import { getAuth,  signInWithEmailAndPassword } from "firebase/auth";
-import { setUserSession } from '../utils/Common';
+import { setUserSession } from '../../utils/Common';
 
-
-
-class Login extends Component {
+class SignIn extends Component {
     constructor(props){
         super(props);
         this.state={
@@ -16,8 +14,7 @@ class Login extends Component {
             loading:false
         }
     }
-    handleLogin(){
-        
+    handleSignIn(){
         this.setState({
             error:null,
             loading:true
@@ -33,20 +30,21 @@ class Login extends Component {
             //this.props.notifyUserLogged(user);
             setUserSession(user.providerData[0],user.accessToken)
             //redirecting
-            this.props.history.push("/dashboard");
+            self.props.history.push("/dashboard");
         })
         .catch((error) => {
             this.setState({loading:false});
             const errorCode = error.code;
             const errorMessage = error.message;
-            this.setState({
+            self.setState({
                 error:errorMessage
             })
         });
     }
     render() {
         return (
-            <div>
+            <div className="helper-form-centered">
+                <p className="form-title">Iniciar Sesion</p>
                 <div className="form-group">
                     <label htmlFor="username">Email:</label>
                     <input type="text" id="username" value={this.state.email} onChange={e=>{this.setState({email:e.target.value})}} />
@@ -55,17 +53,19 @@ class Login extends Component {
                     <label htmlFor="password">Password:</label>
                     <input type="text" id="password" value={this.state.password} onChange={e=>{this.setState({password:e.target.value})}}/>
                 </div>
-                {this.state.error && <p className="error">{this.state.error}</p>}
-                <button 
-                    type="submit" 
-                    disabled={this.state.loading}
-                    onClick={this.handleLogin.bind(this)}
-                    >
-                        {this.state.loading?"Loading...": "Enviar"}
-        
-                </button>
+                {this.state.error && <p className="error-message">{this.state.error}</p>}
+                <div className="form-group">
+                    <button className="btn-submit"
+                        type="submit" 
+                        disabled={this.state.loading}
+                        onClick={this.handleSignIn.bind(this)}
+                        >
+                            {this.state.loading?"Loading...": "Enviar"}
+            
+                    </button>
+                </div>
             </div>
         )
     }
 }
-export default withRouter(Login);
+export default withRouter(SignIn);

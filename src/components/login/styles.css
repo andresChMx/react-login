@@ -1,0 +1,74 @@
+body {
+  background-image: url(../../assets/img/background.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.banner-container {
+  background-image: url(../../assets/img/background-solid.png);
+  background-size: cover;
+}
+.signup-container {
+  background: #393b4c;
+}
+.signin-container {
+  background: #393b4c;
+}
+
+.scrollable-view--data {
+  width: 143%;
+  height: 100%;
+  z-index: 100;
+  position: relative;
+  transition: all 1.3s;
+}
+
+.sign-view-data {
+  height: 100%;
+  width: 40%;
+  position: absolute;
+  left: 0;
+  transition: all 1.3s;
+}
+.sign-view-data.signup {
+  left: auto;
+  right: 0;
+}
+
+.sign-view__logo {
+  height: 8rem;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sign-view__logo img {
+  height: 60%;
+}
+.sign-view__greeting {
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.sign-view__question {
+  font-size: 1.2rem;
+  height: 3rem;
+  line-height: 4rem;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.sign-view__hero {
+  height: calc(100% - 18rem);
+  padding: 4rem;
+  text-align: center;
+}
+.sign-view__hero img {
+  height: 100%;
+  width: auto;
+}

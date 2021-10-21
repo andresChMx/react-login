@@ -1,16 +1,140 @@
+/*login*/
+html {
+  font-size: 62.5%;
+}
 body {
+  font-size: 1.5rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+}
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+.clearfix:after,
+.clearfix:before {
+  content: "";
+  clear: both;
+  display: block;
+}
+.error-message {
+  color: white;
+  border-radius: 10px;
+  margin: 0 3rem;
+  padding: 0.7rem;
+  background: rgba(255, 0, 0, 0.4);
+  font-size: 1.3rem;
+}
+.helper-form-centered {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.form-group {
+  padding: 0 3rem;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.form-group:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.form-group label {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+  color: #39a0b8;
+}
+.form-group input {
+  padding: 0.4rem;
+  line-height: 2.5rem;
+  border: none;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.btn-submit {
+  cursor: pointer;
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  background: #39a0b8;
+  color: white;
+  border: none;
+  box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.4);
+}
+.form-title {
+  margin: 0;
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.main-container {
+  max-width: 100rem;
+  height: 55rem;
+  width: 80%;
+  box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+.filter {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+}
+.scrollable-view--form {
+  width: 143%;
+  height: 100%;
+  position: absolute;
+  left: -40%;
+  transition: all 0.8s;
+}
+.signup-container {
+  position: relative;
+  background-color: rgb(61, 61, 61);
+  height: 100%;
+  width: 30%;
+  float: left;
+  z-index: 2000;
+}
+.banner-container {
+  width: 40%;
+  height: 100%;
+
+  float: left;
+  position: relative;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.banner__button {
+  clip-path: polygon(0 50%, 5% 0, 95% 0%, 100% 50%, 95% 100%, 5% 100%);
+
+  border-radius: 2px;
+  background: red;
+  background: linear-gradient(90deg, #39a0b8, #01768f);
+  padding: 10px 25px;
+  color: white;
+  border: none;
+  position: absolute;
+  left: 50%;
+  top: 20rem;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 200;
 }
-.error {
-  color: red;
+.signin-container {
+  position: relative;
+  background-color: rgb(61, 61, 61);
+  height: 100%;
+  width: 30%;
+  float: left;
+  z-index: 2000;
 }
