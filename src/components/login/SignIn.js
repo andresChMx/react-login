@@ -44,7 +44,7 @@ class SignIn extends Component {
     render() {
         return (
             <div className="helper-form-centered">
-                <p className="form-title">Iniciar Sesion</p>
+                <p className="form-title">Iniciar Sesión</p>
                 <div className="form-group">
                     <label htmlFor="username">Email:</label>
                     <input type="text" id="username" value={this.state.email} onChange={e=>{this.setState({email:e.target.value})}} />

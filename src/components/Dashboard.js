@@ -16,9 +16,9 @@ class Dashboard extends Component {
     }
     render() {
         return (
-            <div>
-                Wlcome to the dashboard
-                <button onClick={this.handleLogout.bind(this)}>Logout</button>
+            <div className="welcome-container">
+                <p className="welcome__message">Welcome to the dashboard</p> 
+                <button className="welcome__button"onClick={this.handleLogout.bind(this)}>Logout</button>
             </div>
         )
     }
