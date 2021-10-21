@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter,Link,NavLink,Route } from 'react-router-dom';
+import { BrowserRouter,Link,NavLink,Route ,Redirect} from 'react-router-dom';
 import Login from './components//login/Login';
 import Dashboard from './components/Dashboard';
 import Home from './components/Home';
@@ -48,7 +48,9 @@ function App(props) {
             
           </div> */}
 
-          <Route exact path="/" component={Home}></Route>
+          <Route exact path="/" component={Home}>
+            <Redirect to="/login"/>
+          </Route>
           <PublicRoute path="/login" component={Login}></PublicRoute>
           <PrivateRoute path="/dashboard" component={Dashboard}></PrivateRoute>
         </BrowserRouter>
